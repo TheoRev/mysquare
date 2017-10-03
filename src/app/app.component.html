@@ -16,8 +16,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a>Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a>Detalle</a></li>
+        <li><a routerLink="/lugares">Inicio<span class="sr-only">(current)</span></a></li>
+        <li><a routerLink="/detalle">Detalle</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -28,14 +28,6 @@
 
 
 <div style="text-align:left">
-  <h3>
-    Welcome to {{title}}!
-  </h3>
-  <hr>
-  <button [disabled]="listo" (click)="hacerAlgo()">Click me!</button>
-  <hr>
-  <p-dropdown [options]="cities" [(ngModel)]="selectedCity" [filter]="true" filterBy="label,value.name" (ngModelChange)="onChange($event)"></p-dropdown>
-  <hr>
 
   <ul>
     <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">

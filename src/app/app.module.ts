@@ -12,14 +12,15 @@ import { AppComponent } from "./app.component";
 import { ResaltarDirective } from "./directives/resaltar.directive";
 import { Routes, RouterModule } from "@angular/router"
 import { DetalleComponent } from "./detalle/detalle.component";
+import { LugaresComponent } from "./lugares/lugares.component";
 
 const appRoutes: Routes = [
-  { path: '', component: AppComponent },
-  { path: 'lugares', component: AppComponent },
+  { path: '', component: LugaresComponent },
+  { path: 'lugares', component: LugaresComponent },
   { path: 'detalle', component: DetalleComponent }
 ];
 @NgModule({
-  declarations: [AppComponent, ResaltarDirective, ContarClicksDirective, DetalleComponent],
+  declarations: [AppComponent, ResaltarDirective, ContarClicksDirective, DetalleComponent, LugaresComponent],
   imports: [
     BrowserModule,
     FormsModule,
