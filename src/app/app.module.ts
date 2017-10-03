@@ -10,9 +10,16 @@ import { AgmCoreModule } from "@agm/core";
 
 import { AppComponent } from "./app.component";
 import { ResaltarDirective } from "./directives/resaltar.directive";
+import { Routes, RouterModule } from "@angular/router"
+import { DetalleComponent } from "./detalle/detalle.component";
 
+const appRoutes: Routes = [
+  { path: '', component: AppComponent },
+  { path: 'lugares', component: AppComponent },
+  { path: 'detalle', component: DetalleComponent }
+];
 @NgModule({
-  declarations: [AppComponent, ResaltarDirective, ContarClicksDirective],
+  declarations: [AppComponent, ResaltarDirective, ContarClicksDirective, DetalleComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -20,9 +27,10 @@ import { ResaltarDirective } from "./directives/resaltar.directive";
     DropdownModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC9qlyP05z4ah-KuGAXPkcV3JlbCUptDts"
-    })
+    }),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
